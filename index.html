@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editorial Enecé — Una buena edición es para siempre</title>
+<meta name="description" content="Editorial Enecé: ediciones cuidadas de textos sobre tarot, cartomancia, parapsicología y clásicos de dominio público.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --piedra:#ECEAE5;
+  --piedra-2:#E2DFD8;
+  --negro:#1A1A1A;
+  --rojo:#A61B1B;
+  --rojo-hover:#8A1616;
+  --gris:#5E5B55;
+  --gris-claro:#BDB8AF;
+  --linea:#D3CFC7;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ancho:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--piedra);color:var(--negro);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.contenedor{max-width:var(--ancho);margin:0 auto;padding:0 24px}
+
+/* Cabecera */
+.cabecera{background:var(--negro);color:var(--gris-claro);position:sticky;top:0;z-index:10}
+.cabecera .contenedor{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{display:inline-flex;align-items:center;gap:12px;color:var(--piedra);text-decoration:none;padding:10px 0}
+.logo img{height:44px;width:auto}
+.logo span{font:500 18px var(--serif);letter-spacing:.01em}
+.menu{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14px}
+.menu a{text-decoration:none;color:var(--gris-claro);transition:color .15s}
+.menu a:hover{color:var(--piedra)}
+
+/* Portada */
+.portada{padding:96px 0 80px;border-bottom:1px solid var(--linea)}
+.portada h1{font:600 clamp(36px,6vw,60px)/1.08 var(--serif);margin:0 0 20px;max-width:15ch;letter-spacing:-.01em}
+.portada p{font-size:19px;color:var(--gris);max-width:52ch;margin:0 0 32px}
+.boton{display:inline-block;background:var(--rojo);color:#fff;text-decoration:none;font:500 15px var(--sans);padding:13px 22px;border-radius:3px;transition:background .15s}
+.boton:hover{background:var(--rojo-hover)}
+.boton-sec{display:inline-block;margin-left:18px;font-size:15px;color:var(--negro);text-underline-offset:4px}
+
+/* Secciones */
+section{padding:80px 0}
+.etiqueta{font:500 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--rojo);margin:0 0 10px}
+h2{font:600 clamp(28px,4vw,38px)/1.15 var(--serif);margin:0 0 36px}
+
+/* Catálogo */
+.grilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:32px}
+.libro{display:flex;flex-direction:column}
+.tapa{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--piedra-2);margin:0 0 16px}
+.libro h3{font:600 20px/1.25 var(--serif);margin:0 0 6px}
+.libro .detalle{font-size:14px;color:var(--gris);margin:0 0 10px}
+.libro p{font-size:15px;margin:0 0 14px}
+.libro .isbn{font-size:13px;color:var(--gris);margin:-6px 0 10px;font-variant-numeric:tabular-nums}
+.libro .isbn:empty{display:none}
+.estado,.pronto{display:inline-block;font:500 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin:0 0 8px}
+.estado{background:var(--negro);color:var(--piedra);align-self:flex-start}
+.discontinuado .tapa{opacity:.55}
+.pronto{background:var(--rojo);color:#fff;margin:0 0 0 10px;vertical-align:middle}
+.libro details{font-size:14px;margin:0 0 14px;color:var(--gris)}
+.libro summary{cursor:pointer;color:var(--negro);font-weight:500}
+.libro details p{font-size:14px;margin:10px 0 0}
+.libro .pronto{margin:0 0 8px;align-self:flex-start}
+.libro a{font-size:14px;font-weight:500;color:var(--rojo);text-underline-offset:4px;margin-top:auto}
+
+/* Nosotros */
+.nosotros{background:var(--negro);color:var(--piedra)}
+.nosotros .etiqueta{color:#E06A6A}
+.nosotros .columnas{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.nosotros p{color:var(--gris-claro);margin:0 0 18px;max-width:60ch}
+.lineas{list-style:none;padding:0;margin:0;border-top:1px solid #333}
+.lineas li{padding:16px 0;border-bottom:1px solid #333;font:500 18px var(--serif);color:var(--piedra)}
+
+/* Contacto */
+.contacto .caja{border:1px solid var(--linea);background:var(--piedra-2);padding:40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.contacto p{margin:0;color:var(--gris);max-width:48ch}
+
+.acciones{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.ig{font-size:15px;color:var(--negro);text-underline-offset:4px}
+
+/* Pie */
+.pie{background:var(--negro);color:var(--gris-claro);font-size:13px;padding:28px 0}
+.pie .contenedor{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.pie a{color:var(--gris-claro)}
+
+@media (max-width:720px){
+  body{font-size:16px}
+  .menu{gap:16px;font-size:13px}
+  .portada{padding:64px 0 56px}
+  section{padding:56px 0}
+  .nosotros .columnas{grid-template-columns:1fr;gap:32px}
+  .boton-sec{display:block;margin:18px 0 0}
+  .contacto .caja{padding:28px}
+  .grilla{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+  .libro h3{font-size:17px}
+  .libro p{font-size:14px}
+}
+@media (max-width:420px){
+  .menu li:nth-child(2){display:none}
+  .logo span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="logo" href="#" aria-label="Editorial Enecé, inicio"><img src="img/logo-blanco.svg" alt=""><span>Editorial Enecé</span></a>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="portada">
+    <div class="contenedor">
+      <h1>Una buena edición es para siempre</h1>
+      <p>Cuidamos los detalles, rescatamos la sabiduría perdida. Investigamos, traducimos y volvemos a poner en circulación las obras que valen la pena.</p>
+      <a class="boton" href="#catalogo">Ver catálogo</a>
+      <a class="boton-sec" href="#nosotros">Conocé la editorial</a>
+    </div>
+  </div>
+
+  <section id="catalogo">
+    <div class="contenedor">
+      <p class="etiqueta">Catálogo</p>
+      <h2>Nuestras ediciones</h2>
+      <div class="grilla">
+        <article class="libro">
+          <img class="tapa" src="img/productos/zener.jpg" alt="Método Zener" loading="lazy" width="800" height="1000">
+          <span class="pronto">Novedad</span><h3>Método Zener</h3>
+          <p class="detalle">Kit: mazo de cartas + libro de 32 páginas + estuche</p>
+          <p class="isbn">ISBN 9786310171142</p>
+          <p>Cartas para medir la percepción extrasensorial, con la historia y la metodología del experimento.</p>
+          <details><summary>Ver más</summary><p>Cartas para medición de la Percepción Extra Sensorial (ESP) + libro de 32 páginas con la historia y la metodología del experimento. También trae acceso a materiales digitales descargables y una asistencia de IA para evaluar los resultados del experimento.</p><p>Este experimento, desarrollado hace casi 100 años en Estados Unidos, es utilizado desde entonces para evaluar las capacidades de percepción extrasensorial de una persona.</p></details>
+          <a class="consultar" href="#contacto">Consultar</a>
+        </article>
+        <article class="libro">
+          <img class="tapa" src="img/productos/guia-lenormand.jpg" alt="Guía Ilustrada Lenormand" loading="lazy" width="800" height="1000">
+          <h3>Guía Ilustrada Lenormand</h3>
+          <p class="detalle">Libro · 2da edición · 110 páginas · 20 x 14 cm</p>
+          <p class="isbn">ISBN 9786310061474</p>
+          <p>Aprende a tirar las cartas con la baraja más famosa de la historia.</p>
+          <details><summary>Ver más</summary><p>Libro con los significados de las cartas y métodos de lectura. Una excelente forma de iniciarse en la lectura de la baraja Lenormand.</p><p>También disponible en combo con el Oráculo Lenormand de Enecé.</p></details>
+          <a class="consultar" href="#contacto">Consultar</a>
+        </article>
+        <article class="libro">
+          <img class="tapa" src="img/productos/oraculo-lenormand.jpg" alt="Oráculo Lenormand" loading="lazy" width="800" height="1000">
+          <h3>Oráculo Lenormand</h3>
+          <p class="detalle">Mazo · cartas de 88 x 57 mm · con guía básica de lectura</p>
+          <p class="isbn">ISBN 9786310064062</p>
+          <p>Basado en una baraja suiza del siglo XIX, restaurada digitalmente.</p>
+          <details><summary>Ver más</summary><p>Impreso en cartulina de 300 g y laminado de ambas caras con polietileno brillante. Respeta la originalidad de las barajas Lenormand: no es una copia hecha con inteligencia artificial.</p><p>Excelente calidad y durabilidad. Los mazos vienen sellados de fábrica.</p></details>
+          <a class="consultar" href="#contacto">Consultar</a>
+        </article>
+        <article class="libro">
+          <img class="tapa" src="img/productos/guia-baraja-espanola.jpg" alt="Guía Ilustrada de la Baraja Española" loading="lazy" width="800" height="1000">
+          <h3>Guía Ilustrada de la Baraja Española</h3>
+          <p class="detalle">Libro · 1ra edición · 132 páginas</p>
+          <p class="isbn">ISBN 9786310171593</p>
+          <p>Manual completo de cartomancia con la baraja española de 48 cartas.</p>
+          <details><summary>Ver más</summary><p>Explica los significados de los palos, las figuras y todas las cartas, y los distintos métodos de tirada según la consulta.</p><p>Se vende solo o en kit con la baraja española, en mazos redondos o tradicionales de la marca Joker.</p></details>
+          <a class="consultar" href="#contacto">Consultar</a>
+        </article>
+        <article class="libro">
+          <img class="tapa" src="img/productos/guia-tarot-3ra.jpg" alt="Guía Ilustrada del Tarot" loading="lazy" width="800" height="1000">
+          <h3>Guía Ilustrada del Tarot</h3>
+          <p class="detalle">Arthur Edward Waite · 3ra edición · 208 páginas · tapa blanda · 15 x 20 cm</p>
+          <p class="isbn">ISBN 9789878885841</p>
+          <p>Los fundamentos del tarot Rider-Waite, en una traducción nueva y actualizada.</p>
+          <details><summary>Ver más</summary><p>Explica los fundamentos detrás del mazo creado por Arthur Waite y Pamela Colman Smith en 1909, también conocido como Rider o Rider-Waite. Trae una sección con explicaciones detalladas del método adivinatorio, una extensa historia del tarot y los significados adivinatorios de cada carta.</p><p>Editado por primera vez en Argentina con una traducción nueva y actualizada, en formato de bolsillo, portadas laminadas y papel eco sustentable.</p><p><em>Título original:</em> The Pictorial Key to the Tarot: Being fragments of a secret tradition under the veil of divination. Primera edición: 1911, William Rider and Son Limited, Londres.</p></details>
+          <a class="consultar" href="#contacto">Consultar</a>
+        </article>
+        <article class="libro">
+          <img class="tapa" src="img/productos/guia-tarot-1ra-eco.jpg" alt="Guía Ilustrada del Tarot — 1ra edición" loading="lazy" width="800" height="1000">
+          <h3>Guía Ilustrada del Tarot — 1ra edición</h3>
+          <p class="detalle">Arthur Edward Waite · 1ra edición en papel ecológico · tapa blanda · 15 x 20 cm</p>
+          <p class="isbn">ISBN 9789878885841</p>
+          <p>La primera edición de Enecé de la obra clásica de Waite, impresa en papel sustentable.</p>
+          <a class="consultar" href="#contacto">Consultar</a>
+        </article>
+        <article class="libro discontinuado">
+          <img class="tapa" src="img/productos/tarot-waite-smith.jpg" alt="Tarot Waite-Smith" loading="lazy" width="800" height="1000">
+          <span class="estado">Discontinuada</span><h3>Tarot Waite-Smith</h3>
+          <p class="detalle">Mazo de 78 cartas · con guía básica de lectura</p>
+          <p class="isbn"></p>
+          <p>Edición facsimilar de la baraja de 1909, con el diseño y el dorso originales.</p>
+          <details><summary>Ver más</summary><p>Edición facsimilar de la baraja creada por Arthur Edward Waite y dibujada por Pamela Colman Smith en 1909, cuya primera edición fue realizada por la casa editorial Rider de Inglaterra, dando lugar a la baraja conocida como "Rider-Waite", "Waite-Smith" o "Rider-Waite-Smith" (RWS).</p><p>Tanto el diseño de las cartas como el dorso respetan los de la baraja original, en una novedad absoluta para el mercado argentino.</p><p>78 cartas con excelente encarte y los nombres y diseños originales (también los nombres de los arcanos mayores, en inglés).</p><p>La guía básica de lectura ofrece un acercamiento inicial a la baraja. Para una mejor comprensión conviene leer la Guía Ilustrada de Waite, también disponible en Enecé.</p></details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" class="nosotros">
+    <div class="contenedor columnas">
+      <div>
+        <p class="etiqueta">Nosotros</p>
+        <h2>Una editorial joven. Industria cultural con espíritu artesanal.</h2>
+      </div>
+      <div>
+        <p>Enecé es un sello independiente argentino dedicado a la investigación, traducción y edición de literatura sobre parapsicología, historia de la cartomancia y tarot clásico.</p>
+        <p>Cada libro se edita, se traduce, se diseña y se imprime con dedicación por el detalle.</p>
+        <ul class="lineas">
+          <li>Guías ilustradas de Cartomancia</li>
+          <li>Parapsicología y Percepción Extra-Sensorial — Colección de la Mente</li>
+          <li>Clásicos Indispensables del Tarot <span class="pronto">Próximamente</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="contenedor">
+      <p class="etiqueta">Contacto</p>
+      <div class="caja">
+        <p>¿Querés revender nuestros productos? Si tenés una librería o un proyecto de cartomancia, escribinos.</p>
+        <!-- PENDIENTE: confirmar el mail de contacto -->
+        <div class="acciones"><a class="boton" href="mailto:contacto@editorialenece.com.ar">Escribinos</a><a class="ig" href="https://www.instagram.com/enece.editorial/" target="_blank" rel="noopener">Instagram @enece.editorial</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <span style="display:inline-flex;align-items:center;gap:10px"><img src="img/logo-blanco.svg" alt="" style="height:24px;width:auto">© 2026 Editorial Enecé · Argentina</span>
+    <a href="https://www.instagram.com/enece.editorial/" target="_blank" rel="noopener">@enece.editorial</a>
+  </div>
+</footer>
+
+</body>
+</html>
