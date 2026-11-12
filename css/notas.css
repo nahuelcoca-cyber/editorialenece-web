@@ -103,3 +103,21 @@ figcaption{font-size:14px;color:var(--gris);margin-top:10px}
   .logo span{display:none}
   .figura-doble{grid-template-columns:1fr}
 }
+
+/* Tablas dentro de las notas */
+.tabla{overflow-x:auto;margin:28px 0 32px}
+.tabla table{border-collapse:collapse;width:100%;min-width:560px;font:400 15px/1.5 var(--sans)}
+.tabla th{text-align:left;font-weight:500;background:var(--negro);color:var(--piedra);padding:12px 14px}
+.tabla td{padding:12px 14px;border-bottom:1px solid var(--linea);vertical-align:top}
+.tabla td:first-child{font-weight:500;white-space:nowrap}
+.tarjeta .imagen img{width:100%;height:100%;object-fit:cover}
+@media (max-width:720px){
+  .tabla table{min-width:0}
+  .tabla thead{display:none}
+  .tabla tr{display:block;border-top:3px solid var(--negro);padding:6px 0 10px}
+  .tabla td{display:grid;grid-template-columns:120px 1fr;gap:12px;border-bottom:none;padding:6px 0;white-space:normal}
+  .tabla td::before{content:attr(data-label);font-weight:500;color:var(--gris)}
+  .tabla td:first-child{font:600 20px var(--serif)}
+  .tabla td:first-child::before{content:none}
+  .tabla td:first-child{display:block}
+}
